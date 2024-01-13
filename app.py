@@ -26,7 +26,8 @@ class App(customtkinter.CTk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.geometry("350x200")
-        self.title("test")
+        self.title("Лунный календарь")
+
 
         self.day_lab = customtkinter.CTkLabel(self, text="Введи число")
         self.day_lab.pack(anchor=tkinter.CENTER)
