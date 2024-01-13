@@ -5,6 +5,7 @@ import customtkinter
 class _ToplevelWindow(customtkinter.CTkToplevel):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.title("Ответ")
         self.geometry("400x200")
 
         with open("log.txt", "r") as file:
