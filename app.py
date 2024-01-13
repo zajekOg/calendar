@@ -55,14 +55,12 @@ class App(customtkinter.CTk):
             if self.month_input in month:
                 self.response = session.get(
                     f"https://kalendar-365.ru/garden/2024/{month[self.month_input]}/{self.day_input}")
-                print(self.response)
                 self.elements = self.response.html.find('blockquote.moon_influence_neutral p')
                 for self.element in self.elements:
                     self.text = self.element.text
                 session.close()
             else:
                 self.text = f"Проверьте написание месяца.\n <-Такого месяца --{self.month_input}-- не существует!->"
-            print(self.text)
             with open("log.txt", "w") as file:
                 file.write(f"{self.text}")
             self.toplevel_window = _ToplevelWindow(self)
